@@ -6,3 +6,5 @@ export { CTAButton, CTACTypeButton, OptionTagButton, ImageButton, PriceSummaryBu
 export { Portal } from './Portal';
 export { Dimmed } from './Dimmed';
 export { Popup } from './Popup';
+export { Banner } from './Banner';
+export { Card } from './Card';
