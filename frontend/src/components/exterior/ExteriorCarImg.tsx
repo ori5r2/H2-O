@@ -33,8 +33,9 @@ function ExteriorCarImg({ imgUrlList }: Props) {
 export default ExteriorCarImg;
 
 const ExteriorCarContainer = styled.div`
-  ${({ theme }) => theme.flex.flexCenterCol}
+  ${({ theme }) => theme.flex.flexEndCol}
   ${({ theme }) => theme.typography.TextKRMedium16}
+  align-items: center;
   position: relative;
   margin: 0 auto;
 
@@ -51,6 +52,7 @@ const ExteriorCarContainer = styled.div`
 const ImgContainer = styled.div<{ isMouseDown: boolean }>`
   width: 592px;
   height: 325px;
+  transform: scale(0.9);
   cursor: ${({ isMouseDown }) => (isMouseDown ? 'grabbing' : 'grab')};
 `;
 
