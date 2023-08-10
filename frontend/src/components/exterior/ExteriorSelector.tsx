@@ -19,13 +19,13 @@ function ExteriorSelector({ exteriorList, selectedIdx, setSelectedIdx }: Props) 
   return (
     <MainSelector title='외장 색상을 선택해주세요'>
       <ExteriorList>
-        {exteriorList.slice(page * 4, (page + 1) * 4).map((item, idx) => (
+        {exteriorList.slice(page * 4, (page + 1) * 4).map(({ name, hexCode, choiceRatio, price }, idx) => (
           <ExteriorCard
             key={idx}
-            colorName={item.name}
-            colorHexCode={item.hexCode}
-            choiceRatio={item.choiceRatio}
-            price={item.price}
+            colorName={name}
+            colorHexCode={hexCode}
+            choiceRatio={choiceRatio}
+            price={price}
             isClicked={selectedIdx === page * 4 + idx}
             onClick={() => setSelectedIdx(page * 4 + idx)}
           />

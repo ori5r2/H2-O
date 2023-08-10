@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRotate } from './hooks';
@@ -8,7 +9,8 @@ interface Props {
 }
 
 function ExteriorCarImg({ imgUrlList }: Props) {
-  const { state, handleMouseDown, handleMouseMove, handleMouseUp, preventEventDefault } = useRotate();
+  const { state, handleMouseDown, handleMouseMove, handleMouseUp } = useRotate();
+  const preventEventDefault: MouseEventHandler<HTMLDivElement> = (e) => e.preventDefault();
 
   return (
     <ExteriorCarContainer>
