@@ -3,6 +3,7 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { DefaultOptionResponse, ExtraOptionResponse } from '@/types/interface';
 import { Flex, Icon } from '@/components/common';
+import { OverFlowRowText } from '@/components/option/utils';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   isExtraOption?: boolean;
@@ -53,6 +54,10 @@ function SearchBar({ isExtraOption = false, input, optionList, filterList }: Pro
     setDropDownList(optionList);
   }, [optionList]);
 
+  useEffect(() => {
+    handleSearchItem('');
+  }, [isExtraOption]);
+
   return (
     <Flex flexDirection='column' position='relative'>
       <InputContainer>
@@ -80,7 +85,7 @@ function SearchBar({ isExtraOption = false, input, optionList, filterList }: Pro
         <DropDownContainer>
           {dropDownList.map((item, idx) => (
             <DropDownItem key={item.name} onClick={() => handleSearchItem(item.name)} isActive={idx === itemIdx}>
-              {item.name}
+              <OverFlowRowText text={item.name} length={300} />
             </DropDownItem>
           ))}
         </DropDownContainer>
