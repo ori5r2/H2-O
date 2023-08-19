@@ -87,7 +87,11 @@ function OptionPage() {
   return (
     <Fragment>
       {/* 배너 */}
-      {checkPackageOption(data) ? <PackageOptionBanner optionInfo={data} /> : <GeneralOptionBanner optionInfo={data} />}
+      {checkPackageOption(data) ? (
+        <PackageOptionBanner key={data.name} optionInfo={data} />
+      ) : (
+        <GeneralOptionBanner key={data.name} optionInfo={data} />
+      )}
       <MainSelector>
         {/* 카테고리 버튼 + 검색창 */}
         <ButtonContainer>
