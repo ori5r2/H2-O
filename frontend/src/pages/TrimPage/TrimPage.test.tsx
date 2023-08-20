@@ -35,9 +35,7 @@ describe('트림페이지 통합 테스트', () => {
 
     await waitForElementToBeRemoved(screen.queryByText('로딩 ㅋ'));
 
-    const image = screen.getByAltText(
-      'https://h2o-static-contents.s3.ap-northeast-2.amazonaws.com/trim/le-blanc/summary/img-interior.png',
-    );
+    const image = screen.getByAltText('이미지 1');
     fireEvent.click(image);
     expect(image).toHaveStyle('width: 504px');
   });
