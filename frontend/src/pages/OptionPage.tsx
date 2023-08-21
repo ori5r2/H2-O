@@ -10,7 +10,7 @@ import {
   GeneralOptionBanner,
   PackageOptionBanner,
 } from '@/components/option';
-import { defaultOptionCategoryList, extraOptionCategoryList } from '@/components/option/data';
+import { defaultOptionCategoryList, extraOptionCategoryList } from '@/components/option/constants';
 import { useFilter } from '@/components/option/hooks';
 import { SearchBar } from '@/components/option/utils';
 import { useFetcher, useSafeContext } from '@/hooks';
