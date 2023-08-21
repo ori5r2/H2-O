@@ -3,7 +3,7 @@ import useRotate from './useRotate';
 import { fireEvent, render, renderHook } from '@/tests/test-util';
 
 describe('useRotate 테스트', () => {
-  it('useRotate의 불러오면 초기화되어야 한다.', () => {
+  it('useRotate를 불러오면 초기화되어야 한다.', () => {
     const { result } = renderHook(() => useRotate());
     const { nowImgIdx, nextImgIdx, mouseX, isMouseDown } = result.current.state;
 
