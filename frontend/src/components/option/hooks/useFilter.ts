@@ -1,6 +1,6 @@
 import { useCallback, useReducer } from 'react';
 import type { DefaultOptionResponse, ExtraOptionResponse } from '@/types/interface';
-import { HASHTAG_LIST, defaultOptionCategoryList, extraOptionCategoryList } from '@/components/option/data';
+import { HASHTAG_LIST, defaultOptionCategoryList, extraOptionCategoryList } from '@/components/option/constants';
 
 type Action =
   | {
@@ -47,7 +47,7 @@ const filterDefaultOption = ({ input, entireList }: DefaultFilterProps) => {
   return entireList.filter((option) => option.name.includes(input));
 };
 
-const debounceFunction = <T extends object[]>(callback: (...args: T) => void, delay: number) => {
+const debounceFunction = <T extends unknown[]>(callback: (...args: T) => void, delay: number) => {
   let timer: NodeJS.Timeout;
 
   return (...args: T) => {
