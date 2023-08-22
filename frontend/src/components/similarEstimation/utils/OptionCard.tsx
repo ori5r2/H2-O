@@ -3,10 +3,17 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography, Card as _Card, Icon as _Icon } from '@/components/common';
 import { toPriceFormatString } from '@/utils/string';
-import type { SelectionInfoWithImage } from '@/providers/SelectionProvider';
+
+interface optionProps {
+  category: string;
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+}
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  option: SelectionInfoWithImage;
+  option: optionProps;
   isClicked: boolean;
 }
 
