@@ -158,6 +158,14 @@ export interface QutationBody {
   trimId: number;
 }
 
+export interface QuotationOption {
+  category: string;
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+}
+
 export interface QutationResponse {
   image: string;
   modelType: {
@@ -165,15 +173,7 @@ export interface QutationResponse {
     drivetrainName: string;
     powertrainName: string;
   };
-  options: [
-    {
-      category: string;
-      id: number;
-      image: string;
-      name: string;
-      price: number;
-    },
-  ];
+  options: QuotationOption[];
   price: number;
   salesCount: number;
 }

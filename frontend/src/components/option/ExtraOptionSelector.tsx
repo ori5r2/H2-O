@@ -33,16 +33,14 @@ function ExtraOptionSelector({ optionList, handleClickOptionCard }: Props) {
   };
 
   useEffect(() => {
-    if (selectionInfo.extraOptions === undefined) {
+    if (!selectionInfo.extraOptions) {
       dispatch({ type: 'SET_EXTRA_OPTIONS', payload: [] });
       return;
     }
 
     const newOptionList = dataList.map((item) => {
       return (
-        selectionInfo.extraOptions?.optionList.find(function (data) {
-          return data.id === item.id;
-        }) || { ...item, isQuotation: false }
+        selectionInfo.extraOptions?.optionList.find((data) => data.id === item.id) || { ...item, isQuotation: false }
       );
     });
 
