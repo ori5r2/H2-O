@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Circle 컴포넌트 테스트 > Circle 컴포넌트 스냅샷 테스트 > Circle type===border (원의 테두리가 색상으로 채워져 있고 내부는 투명인 컴포넌트) 스냅샷 테스트 1`] = `
+exports[`Circle 컴포넌트 테스트 > Circle 컴포넌트 스냅샷 테스트 > Circle의 type 속성이 border인 컴포넌트 스냅샷 테스트 1`] = `
 <svg
   data-testid="circle-border"
   fill="none"
@@ -70,7 +70,7 @@ exports[`Circle 컴포넌트 테스트 > Circle 컴포넌트 스냅샷 테스트
 </svg>
 `;
 
-exports[`Circle 컴포넌트 테스트 > Circle 컴포넌트 스냅샷 테스트 > Circle type===fill (원의 내부가 색상으로 채워진 컴포넌트) 스냅샷 테스트 1`] = `
+exports[`Circle 컴포넌트 테스트 > Circle 컴포넌트 스냅샷 테스트 > Circle의 type 속성이 fill인 컴포넌트 스냅샷 테스트 1`] = `
 <svg
   data-testid="circle-fill"
   height="46"
