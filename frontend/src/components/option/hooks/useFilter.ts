@@ -2,6 +2,7 @@ import { useCallback, useReducer } from 'react';
 import type { DefaultOptionResponse, ExtraOptionResponse } from '@/types/response';
 import {
   DEFAULT_CATEGORY_OPTION_LIST,
+  EXTRA_OPTION_CATEGORY_LIST,
   EXTRA_OPTION_CATEGORY_LIST_FILTER,
   HASHTAG_LIST,
 } from '@/components/option/constants';
@@ -41,8 +42,10 @@ interface DefaultFilterProps {
 }
 
 const filterExtraOption = ({ input, entireList }: ExtraFilterProps) => {
-  if (EXTRA_OPTION_CATEGORY_LIST_FILTER.includes(input))
-    return entireList.filter((option) => option.category === input);
+  if (EXTRA_OPTION_CATEGORY_LIST.includes(input))
+    return entireList.filter((option) =>
+      option.category === '악세사리' ? input === '액세서리' : option.category === input,
+    );
   if (HASHTAG_LIST.includes(input)) return entireList.filter((option) => option.hashTags.includes(input));
   return entireList.filter((option) => option.name.includes(input));
 };
