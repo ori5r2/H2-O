@@ -1,6 +1,10 @@
 import { useCallback, useReducer } from 'react';
 import type { DefaultOptionResponse, ExtraOptionResponse } from '@/types/response';
-import { DEFAULT_CATEGORY_OPTION_LIST, EXTRA_OPTION_CATEGORY_LIST, HASHTAG_LIST } from '@/components/option/constants';
+import {
+  DEFAULT_CATEGORY_OPTION_LIST,
+  EXTRA_OPTION_CATEGORY_LIST_FILTER,
+  HASHTAG_LIST,
+} from '@/components/option/constants';
 
 type Action =
   | {
@@ -37,7 +41,8 @@ interface DefaultFilterProps {
 }
 
 const filterExtraOption = ({ input, entireList }: ExtraFilterProps) => {
-  if (EXTRA_OPTION_CATEGORY_LIST.includes(input)) return entireList.filter((option) => option.category === input);
+  if (EXTRA_OPTION_CATEGORY_LIST_FILTER.includes(input))
+    return entireList.filter((option) => option.category === input);
   if (HASHTAG_LIST.includes(input)) return entireList.filter((option) => option.hashTags.includes(input));
   return entireList.filter((option) => option.name.includes(input));
 };
@@ -75,7 +80,9 @@ function reducer(state: State, action: Action): State {
         ...state,
         extraCategoryIdx: action.payload,
         extraOptionList: action.payload
-          ? state.extraOptionEntireList.filter((opt) => opt.category === EXTRA_OPTION_CATEGORY_LIST[action.payload])
+          ? state.extraOptionEntireList.filter(
+              (opt) => opt.category === EXTRA_OPTION_CATEGORY_LIST_FILTER[action.payload],
+            )
           : state.extraOptionEntireList,
       };
     case 'CLICK_DEFAULT_CATEGORY':
