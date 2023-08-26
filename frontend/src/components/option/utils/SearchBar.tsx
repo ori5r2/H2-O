@@ -49,7 +49,7 @@ function SearchBar({ isExtraOption = false, input, optionList, filterList }: Pro
   };
 
   useEffect(() => {
-    input === '' ? setDropDownList([]) : setDropDownList(optionList);
+    !input ? setDropDownList([]) : setDropDownList(optionList);
   }, [optionList]);
 
   return (
